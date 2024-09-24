@@ -5,7 +5,9 @@
         // Global data structures
         static Dictionary<string, HashSet<string>> courses = new Dictionary<string, HashSet<string>>();
         static Dictionary<string, int> courseCapacities = new Dictionary<string, int>();
-        static Dictionary<string, List <string>> WaitList = new Dictionary<string, List<string>>();
+    
+        static Dictionary<string, List<string>> WaitList = new Dictionary<string, List<string>>();
+
         static void Main(string[] args)
         {
             
@@ -140,6 +142,7 @@
                 {
                     WaitList[courseCode].Add(studentName);
                     Console.WriteLine($"{studentName} added to the waitlist for {courseCode}.");
+                    DisplayWaitingList();
                 }
                 else
                 {
@@ -215,6 +218,7 @@
             {
                 string course = entry.Key;
                 string students = string.Join(", ", entry.Value);
+       
                 Console.WriteLine($"Course: {course}, Waiting Students: {students}");
             }
         }
